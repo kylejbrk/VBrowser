@@ -24,16 +24,16 @@ Partial Class Browser
     Private Sub InitializeComponent()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.tstbNavBar = New System.Windows.Forms.ToolStripTextBox()
         Me.tsbBack = New System.Windows.Forms.ToolStripButton()
         Me.tsbForward = New System.Windows.Forms.ToolStripButton()
         Me.tsbRefresh = New System.Windows.Forms.ToolStripButton()
         Me.tsbHome = New System.Windows.Forms.ToolStripButton()
-        Me.tstbNavBar = New System.Windows.Forms.ToolStripTextBox()
         Me.tsbGo = New System.Windows.Forms.ToolStripButton()
         Me.tsddbMenu = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GitHubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPreferences = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GitHubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,6 +57,12 @@ Partial Class Browser
         Me.ToolStrip1.Stretch = True
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'tstbNavBar
+        '
+        Me.tstbNavBar.AutoSize = False
+        Me.tstbNavBar.Name = "tstbNavBar"
+        Me.tstbNavBar.Size = New System.Drawing.Size(400, 47)
         '
         'tsbBack
         '
@@ -94,48 +100,42 @@ Partial Class Browser
         Me.tsbHome.Size = New System.Drawing.Size(39, 44)
         Me.tsbHome.Text = "Go Home"
         '
-        'tstbNavBar
-        '
-        Me.tstbNavBar.AutoSize = False
-        Me.tstbNavBar.Name = "tstbNavBar"
-        Me.tstbNavBar.Size = New System.Drawing.Size(400, 47)
-        '
         'tsbGo
         '
         Me.tsbGo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.tsbGo.Image = Global.WebBrowser.My.Resources.Resources._075__navigation
         Me.tsbGo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbGo.Name = "tsbGo"
-        Me.tsbGo.Size = New System.Drawing.Size(44, 44)
+        Me.tsbGo.Size = New System.Drawing.Size(39, 44)
         Me.tsbGo.Text = "ToolStripButton1"
         '
         'tsddbMenu
         '
         Me.tsddbMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsddbMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem, Me.PrintToolStripMenuItem, Me.GitHubToolStripMenuItem})
+        Me.tsddbMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiPreferences, Me.PrintToolStripMenuItem, Me.GitHubToolStripMenuItem})
         Me.tsddbMenu.Image = Global.WebBrowser.My.Resources.Resources._082__setting_cog
         Me.tsddbMenu.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsddbMenu.Name = "tsddbMenu"
         Me.tsddbMenu.Size = New System.Drawing.Size(48, 44)
         Me.tsddbMenu.Text = "ToolStripDropDownButton1"
         '
-        'SettingsToolStripMenuItem
+        'tsmiPreferences
         '
-        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.SettingsToolStripMenuItem.Text = "Preferences"
-        '
-        'GitHubToolStripMenuItem
-        '
-        Me.GitHubToolStripMenuItem.Name = "GitHubToolStripMenuItem"
-        Me.GitHubToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
-        Me.GitHubToolStripMenuItem.Text = "GitHub"
+        Me.tsmiPreferences.Name = "tsmiPreferences"
+        Me.tsmiPreferences.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiPreferences.Text = "Preferences"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PrintToolStripMenuItem.Text = "Print"
+        '
+        'GitHubToolStripMenuItem
+        '
+        Me.GitHubToolStripMenuItem.Name = "GitHubToolStripMenuItem"
+        Me.GitHubToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.GitHubToolStripMenuItem.Text = "GitHub"
         '
         'Browser
         '
@@ -162,7 +162,7 @@ Partial Class Browser
     Friend WithEvents tstbNavBar As ToolStripTextBox
     Friend WithEvents tsbGo As ToolStripButton
     Friend WithEvents tsddbMenu As ToolStripDropDownButton
-    Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents tsmiPreferences As ToolStripMenuItem
     Friend WithEvents tsbRefresh As ToolStripButton
     Friend WithEvents GitHubToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PrintToolStripMenuItem As ToolStripMenuItem

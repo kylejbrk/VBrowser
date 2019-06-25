@@ -11,6 +11,10 @@
     End Sub
 
     Private Sub Load_Page(link As String)
+        If Not UrlChecker.IsUrl(link) Then
+            link = UrlChecker.GetSearchString + link
+        End If
+
         WebBrowser1.Navigate(link)
     End Sub
 
@@ -19,7 +23,7 @@
     End Sub
 
     Private Sub Go_Home()
-        Load_Page("google.com")
+        Load_Page(My.Settings.HomePage)
     End Sub
 
     Private Sub Navigated() Handles WebBrowser1.Navigated
@@ -54,5 +58,9 @@
 
     Private Sub tsbRefresh_Click(sender As Object, e As EventArgs) Handles tsbRefresh.Click
         WebBrowser1.Navigate(WebBrowser1.Url.ToString())
+    End Sub
+
+    Private Sub tsmiPreferences_Click(sender As Object, e As EventArgs) Handles tsmiPreferences.Click
+        Preferences.ShowDialog()
     End Sub
 End Class
