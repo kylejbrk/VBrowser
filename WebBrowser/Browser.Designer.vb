@@ -22,6 +22,7 @@ Partial Class Browser
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tsbBack = New System.Windows.Forms.ToolStripButton()
         Me.tsbForward = New System.Windows.Forms.ToolStripButton()
@@ -33,11 +34,12 @@ Partial Class Browser
         Me.tsmiPreferences = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GitHubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.CloseCurrentTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.tpNewTab = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.CloseCurrentTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
@@ -45,7 +47,8 @@ Partial Class Browser
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.SystemColors.Control
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(35, 35)
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbBack, Me.tsbForward, Me.tsbRefresh, Me.tsbHome, Me.tstbNavBar, Me.tsbGo, Me.tsddbMenu})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
@@ -99,10 +102,10 @@ Partial Class Browser
         'tsbGo
         '
         Me.tsbGo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbGo.Image = Global.VBrowser.My.Resources.Resources._075__navigation
+        Me.tsbGo.Image = Global.VBrowser.My.Resources.Resources._022__arrow2_right
         Me.tsbGo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbGo.Name = "tsbGo"
-        Me.tsbGo.Size = New System.Drawing.Size(39, 44)
+        Me.tsbGo.Size = New System.Drawing.Size(34, 44)
         Me.tsbGo.Text = "ToolStripButton1"
         '
         'tsddbMenu
@@ -134,6 +137,17 @@ Partial Class Browser
         Me.GitHubToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.GitHubToolStripMenuItem.Text = "GitHub"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(165, 6)
+        '
+        'CloseCurrentTabToolStripMenuItem
+        '
+        Me.CloseCurrentTabToolStripMenuItem.Name = "CloseCurrentTabToolStripMenuItem"
+        Me.CloseCurrentTabToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.CloseCurrentTabToolStripMenuItem.Text = "Close Current Tab"
+        '
         'tpNewTab
         '
         Me.tpNewTab.BackColor = System.Drawing.Color.Transparent
@@ -157,16 +171,9 @@ Partial Class Browser
         Me.TabControl1.Size = New System.Drawing.Size(984, 514)
         Me.TabControl1.TabIndex = 2
         '
-        'CloseCurrentTabToolStripMenuItem
+        'Timer1
         '
-        Me.CloseCurrentTabToolStripMenuItem.Name = "CloseCurrentTabToolStripMenuItem"
-        Me.CloseCurrentTabToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
-        Me.CloseCurrentTabToolStripMenuItem.Text = "Close Current Tab"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(165, 6)
+        Me.Timer1.Enabled = True
         '
         'Browser
         '
@@ -201,4 +208,5 @@ Partial Class Browser
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents CloseCurrentTabToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Timer1 As Timer
 End Class

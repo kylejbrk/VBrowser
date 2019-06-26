@@ -1,5 +1,6 @@
 ﻿Public Class Browser
     Dim WithEvents currentBrowser As WebBrowser
+    Dim WithEvents currentLabel As Label
 
     Private Sub Browser_Load() Handles MyBase.Load
         Resize_ToolStripTextBox()
@@ -84,6 +85,18 @@
             .ScriptErrorsSuppressed = True
         End With
 
+        Dim newStatus As New Label()
+        newBrowser.Controls.Add(newStatus)
+
+        With newStatus
+            .Visible = False
+            .Parent = newBrowser
+            .Location = New Point(1, newBrowser.Height - 15)
+            .Anchor = AnchorStyles.Left Or AnchorStyles.Bottom
+            .BackColor = Color.White
+            .AutoSize = True
+        End With
+
         TabControl1.SelectedTab = newTab
     End Sub
 
@@ -95,7 +108,8 @@
 
     Private Sub TabSelected() Handles TabControl1.Selected
         If TabControl1.SelectedTab IsNot tpNewTab Then
-            currentBrowser = TabControl1.SelectedTab.Tag
+            currentBrowser = TabControl1.SelectedTab.Controls.Item(0)
+            currentLabel = currentBrowser.Controls.Item(0)
         End If
     End Sub
 
@@ -112,6 +126,14 @@
             If currentIndx > 0 Then
                 TabControl1.SelectedIndex = (currentIndx - 1) Mod TabControl1.TabCount()
             End If
+        End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        currentLabel.Visible = True
+        currentLabel.Text = currentBrowser.StatusText
+        If currentLabel.Text = "Done" Then
+            currentLabel.Visible = False
         End If
     End Sub
 End Class
