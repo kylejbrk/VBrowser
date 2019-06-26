@@ -36,13 +36,15 @@ Partial Class Browser
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.tpNewTab = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.CloseCurrentTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.Control
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(35, 35)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbBack, Me.tsbForward, Me.tsbRefresh, Me.tsbHome, Me.tstbNavBar, Me.tsbGo, Me.tsddbMenu})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
@@ -106,29 +108,30 @@ Partial Class Browser
         'tsddbMenu
         '
         Me.tsddbMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsddbMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiPreferences, Me.PrintToolStripMenuItem, Me.GitHubToolStripMenuItem})
+        Me.tsddbMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiPreferences, Me.PrintToolStripMenuItem, Me.GitHubToolStripMenuItem, Me.ToolStripSeparator1, Me.CloseCurrentTabToolStripMenuItem})
         Me.tsddbMenu.Image = Global.VBrowser.My.Resources.Resources._082__setting_cog
         Me.tsddbMenu.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsddbMenu.Name = "tsddbMenu"
+        Me.tsddbMenu.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.tsddbMenu.Size = New System.Drawing.Size(48, 44)
         Me.tsddbMenu.Text = "ToolStripDropDownButton1"
         '
         'tsmiPreferences
         '
         Me.tsmiPreferences.Name = "tsmiPreferences"
-        Me.tsmiPreferences.Size = New System.Drawing.Size(135, 22)
+        Me.tsmiPreferences.Size = New System.Drawing.Size(168, 22)
         Me.tsmiPreferences.Text = "Preferences"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'GitHubToolStripMenuItem
         '
         Me.GitHubToolStripMenuItem.Name = "GitHubToolStripMenuItem"
-        Me.GitHubToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.GitHubToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.GitHubToolStripMenuItem.Text = "GitHub"
         '
         'tpNewTab
@@ -153,6 +156,17 @@ Partial Class Browser
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(984, 514)
         Me.TabControl1.TabIndex = 2
+        '
+        'CloseCurrentTabToolStripMenuItem
+        '
+        Me.CloseCurrentTabToolStripMenuItem.Name = "CloseCurrentTabToolStripMenuItem"
+        Me.CloseCurrentTabToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.CloseCurrentTabToolStripMenuItem.Text = "Close Current Tab"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(165, 6)
         '
         'Browser
         '
@@ -185,4 +199,6 @@ Partial Class Browser
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
     Friend WithEvents tpNewTab As TabPage
     Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents CloseCurrentTabToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -100,25 +100,14 @@
     End Sub
 
     Private Sub GitHubToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GitHubToolStripMenuItem.Click
-
+        Load_Page("https://github.com/kylejbrk/VBrowser")
     End Sub
 
-    Private Sub TabControl1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles TabControl1.DrawItem
-        e.Graphics.DrawString("x", e.Font, Brushes.Black, e.Bounds.Right - 15, e.Bounds.Top + 4)
-        e.Graphics.DrawString(TabControl1.TabPages(e.Index).Text, e.Font, Brushes.Black, e.Bounds.Left + 12, e.Bounds.Top + 4)
-        e.DrawFocusRectangle()
-    End Sub
-
-    Private Sub TabControl1_MouseDown(sender As Object, e As MouseEventArgs) Handles TabControl1.MouseDown
-        For i As Integer = 0 To TabControl1.TabPages.Count - 1
-            Dim r As Rectangle = TabControl1.GetTabRect(i)
-            Dim closeButton As Rectangle = New Rectangle(r.Right - 15, r.Top + 4, 9, 7)
-            If closeButton.Contains(e.Location) Then
-                If MessageBox.Show("Close form?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                    TabControl1.TabPages.RemoveAt(i)
-                    Exit Sub
-                End If
-            End If
-        Next
+    Private Sub CloseCurrentTabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseCurrentTabToolStripMenuItem.Click
+        If TabControl1.TabCount() <= 2 Then
+            Me.Close()
+        Else
+            TabControl1.SelectedTab.Dispose()
+        End If
     End Sub
 End Class
