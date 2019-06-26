@@ -107,7 +107,11 @@
         If TabControl1.TabCount() <= 2 Then
             Me.Close()
         Else
+            Dim currentIndx As Integer = TabControl1.SelectedIndex
             TabControl1.SelectedTab.Dispose()
+            If currentIndx > 0 Then
+                TabControl1.SelectedIndex = (currentIndx - 1) Mod TabControl1.TabCount()
+            End If
         End If
     End Sub
 End Class
