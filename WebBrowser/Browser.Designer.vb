@@ -23,6 +23,7 @@ Partial Class Browser
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Browser))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tsbBack = New System.Windows.Forms.ToolStripButton()
         Me.tsbForward = New System.Windows.Forms.ToolStripButton()
@@ -63,7 +64,7 @@ Partial Class Browser
         Me.tsbBack.Image = Global.VBrowser.My.Resources.Resources._001__arrow_left
         Me.tsbBack.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbBack.Name = "tsbBack"
-        Me.tsbBack.Size = New System.Drawing.Size(39, 44)
+        Me.tsbBack.Size = New System.Drawing.Size(34, 44)
         Me.tsbBack.Text = "Go Back"
         '
         'tsbForward
@@ -72,7 +73,7 @@ Partial Class Browser
         Me.tsbForward.Image = Global.VBrowser.My.Resources.Resources._002__arrow_right
         Me.tsbForward.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbForward.Name = "tsbForward"
-        Me.tsbForward.Size = New System.Drawing.Size(39, 44)
+        Me.tsbForward.Size = New System.Drawing.Size(34, 44)
         Me.tsbForward.Text = "Go Forward"
         '
         'tsbRefresh
@@ -81,7 +82,7 @@ Partial Class Browser
         Me.tsbRefresh.Image = Global.VBrowser.My.Resources.Resources._009__arrow_lockwise
         Me.tsbRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbRefresh.Name = "tsbRefresh"
-        Me.tsbRefresh.Size = New System.Drawing.Size(39, 44)
+        Me.tsbRefresh.Size = New System.Drawing.Size(34, 44)
         Me.tsbRefresh.Text = "Reload"
         '
         'tsbHome
@@ -90,7 +91,7 @@ Partial Class Browser
         Me.tsbHome.Image = Global.VBrowser.My.Resources.Resources._101__home
         Me.tsbHome.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbHome.Name = "tsbHome"
-        Me.tsbHome.Size = New System.Drawing.Size(39, 44)
+        Me.tsbHome.Size = New System.Drawing.Size(34, 44)
         Me.tsbHome.Text = "Go Home"
         '
         'tstbNavBar
@@ -116,7 +117,7 @@ Partial Class Browser
         Me.tsddbMenu.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsddbMenu.Name = "tsddbMenu"
         Me.tsddbMenu.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.tsddbMenu.Size = New System.Drawing.Size(48, 44)
+        Me.tsddbMenu.Size = New System.Drawing.Size(43, 44)
         Me.tsddbMenu.Text = "ToolStripDropDownButton1"
         '
         'tsmiPreferences
@@ -165,6 +166,7 @@ Partial Class Browser
         '
         Me.TabControl1.Controls.Add(Me.tpNewTab)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl1.ItemSize = New System.Drawing.Size(48, 18)
         Me.TabControl1.Location = New System.Drawing.Point(0, 47)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -182,6 +184,7 @@ Partial Class Browser
         Me.ClientSize = New System.Drawing.Size(984, 561)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.ToolStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(1000, 600)
         Me.Name = "Browser"
         Me.Text = "VBrowser"

@@ -29,6 +29,12 @@
 
     Private Sub Navigated() Handles currentBrowser.Navigated
         tstbNavBar.Text = currentBrowser.Url.ToString()
+        Dim url = currentBrowser.Url.ToString()
+        If url.Length() <= 30 Then
+            currentBrowser.Parent.Text = url
+        Else
+            currentBrowser.Parent.Text = url.Substring(0, 30)
+        End If
     End Sub
 
     Private Sub Resize_ToolStripTextBox() Handles ToolStrip1.Resize
@@ -95,6 +101,7 @@
             .Anchor = AnchorStyles.Left Or AnchorStyles.Bottom
             .BackColor = Color.White
             .AutoSize = True
+            .MaximumSize = New Point(300, 24)
         End With
 
         TabControl1.SelectedTab = newTab
@@ -110,6 +117,9 @@
         If TabControl1.SelectedTab IsNot tpNewTab Then
             currentBrowser = TabControl1.SelectedTab.Controls.Item(0)
             currentLabel = currentBrowser.Controls.Item(0)
+            If Not currentBrowser.Url Is Nothing Then
+                tstbNavBar.Text = currentBrowser.Url.ToString()
+            End If
         End If
     End Sub
 
@@ -136,4 +146,5 @@
             currentLabel.Visible = False
         End If
     End Sub
+
 End Class
